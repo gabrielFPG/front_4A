@@ -123,9 +123,7 @@ export class CategoriaComponent implements OnInit {
 
   alerta(title:string, text:string, icon:'success'|'error'|'info'|'question'){
     Swal.fire({title,text,icon});
-     // title: title,
-    //  text: text,
-     // icon: icon
+
     
   }
 }

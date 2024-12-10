@@ -4,7 +4,6 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,18 +21,18 @@ export class LoginComponent implements OnInit{
     rememberMe: new FormControl(false) // Nuevo control para 'Remember me'
   })
 
-  //Formulario de olvidar contrasenia
+
   forgotPasswordForm = new FormGroup({
     email: new FormControl('', [Validators.email, Validators.required]),
   });
 
-  //abre el modal de olvidar contraseña
+
   forgotPasswordModal = false;
 
   ngOnInit() {
     if(this.cargarCredenciales()){
       this.funIngresar();
-    } // Carga en caso tenga la marca remember
+    } 
     
   }
   
@@ -71,12 +70,10 @@ export class LoginComponent implements OnInit{
     }
   }
 
-  //abre el modal
   openForgotPasswordModal() {
     this.forgotPasswordModal = true;
   }
 
-  //cierra el modal
   closeForgotPasswordModal() {
     this.forgotPasswordModal = false;
   }
@@ -86,16 +83,7 @@ export class LoginComponent implements OnInit{
     const email = this.forgotPasswordForm.value.email;
     console.log(`Simulando envío de correo a: ${email}`);
     alert(`Email sent successfully to: ${email}`);
-    this.closeForgotPasswordModal(); // Cierra el modal después de simular el envío
-    /*this.authService.sendForgotPasswordEmail(email).subscribe(
-      (res) => {
-        console.log('Correo de recuperación enviado:', res);
-        this.closeForgotPasswordModal();
-      },
-      (error) => {
-        console.error('Error al enviar correo:', error);
-      }
-    );*/
+    this.closeForgotPasswordModal();
   }
   
 }

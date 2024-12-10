@@ -7,8 +7,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
-//import { ButtonModule } from 'primeng/button';
-//import {PasswordModule} from 'primeng/password'
 import { PrimengModule } from '../primeng/primeng.module';
 
 
@@ -26,8 +24,6 @@ import { PrimengModule } from '../primeng/primeng.module';
     AuthRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    //ButtonModule,
-    //PasswordModule,
     PrimengModule
   ]
 })
